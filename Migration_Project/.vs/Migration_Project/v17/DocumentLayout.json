@@ -1,0 +1,168 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Migration_Project\\Migration_Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C6AB3DF4-AFAB-4D74-80BE-04D94A02F97E}|Migration_Project.csproj|d:\\migration_project\\migration_project\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6AB3DF4-AFAB-4D74-80BE-04D94A02F97E}|Migration_Project.csproj|solutionrelative:controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6AB3DF4-AFAB-4D74-80BE-04D94A02F97E}|Migration_Project.csproj|d:\\migration_project\\migration_project\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6AB3DF4-AFAB-4D74-80BE-04D94A02F97E}|Migration_Project.csproj|solutionrelative:services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6AB3DF4-AFAB-4D74-80BE-04D94A02F97E}|Migration_Project.csproj|d:\\migration_project\\migration_project\\services\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6AB3DF4-AFAB-4D74-80BE-04D94A02F97E}|Migration_Project.csproj|solutionrelative:services\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6AB3DF4-AFAB-4D74-80BE-04D94A02F97E}|Migration_Project.csproj|d:\\migration_project\\migration_project\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6AB3DF4-AFAB-4D74-80BE-04D94A02F97E}|Migration_Project.csproj|solutionrelative:models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6AB3DF4-AFAB-4D74-80BE-04D94A02F97E}|Migration_Project.csproj|d:\\migration_project\\migration_project\\services\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6AB3DF4-AFAB-4D74-80BE-04D94A02F97E}|Migration_Project.csproj|solutionrelative:services\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6AB3DF4-AFAB-4D74-80BE-04D94A02F97E}|Migration_Project.csproj|d:\\migration_project\\migration_project\\automapper\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6AB3DF4-AFAB-4D74-80BE-04D94A02F97E}|Migration_Project.csproj|solutionrelative:automapper\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6AB3DF4-AFAB-4D74-80BE-04D94A02F97E}|Migration_Project.csproj|d:\\migration_project\\migration_project\\data\\customerdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6AB3DF4-AFAB-4D74-80BE-04D94A02F97E}|Migration_Project.csproj|solutionrelative:data\\customerdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6AB3DF4-AFAB-4D74-80BE-04D94A02F97E}|Migration_Project.csproj|d:\\migration_project\\migration_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6AB3DF4-AFAB-4D74-80BE-04D94A02F97E}|Migration_Project.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 386,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "D:\\Migration_Project\\Migration_Project\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CustomerController.cs",
+              "ToolTip": "D:\\Migration_Project\\Migration_Project\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "Controllers\\CustomerController.cs",
+              "ViewState": "AgIAAKUAAAAAAAAAAIAwwKoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T12:05:31.307Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "D:\\Migration_Project\\Migration_Project\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "Models\\Customer.cs",
+              "ToolTip": "D:\\Migration_Project\\Migration_Project\\Models\\Customer.cs",
+              "RelativeToolTip": "Models\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T07:17:39.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "D:\\Migration_Project\\Migration_Project\\AutoMapper\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "AutoMapper\\MappingProfile.cs",
+              "ToolTip": "D:\\Migration_Project\\Migration_Project\\AutoMapper\\MappingProfile.cs",
+              "RelativeToolTip": "AutoMapper\\MappingProfile.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAywBAAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T10:26:51.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CustomerRepository.cs",
+              "DocumentMoniker": "D:\\Migration_Project\\Migration_Project\\Services\\CustomerRepository.cs",
+              "RelativeDocumentMoniker": "Services\\CustomerRepository.cs",
+              "ToolTip": "D:\\Migration_Project\\Migration_Project\\Services\\CustomerRepository.cs",
+              "RelativeToolTip": "Services\\CustomerRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAhwBoAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T10:20:03.057Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ICustomerRepository.cs",
+              "DocumentMoniker": "D:\\Migration_Project\\Migration_Project\\Services\\ICustomerRepository.cs",
+              "RelativeDocumentMoniker": "Services\\ICustomerRepository.cs",
+              "ToolTip": "D:\\Migration_Project\\Migration_Project\\Services\\ICustomerRepository.cs",
+              "RelativeToolTip": "Services\\ICustomerRepository.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAjwAsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T10:19:55.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerService.cs",
+              "DocumentMoniker": "D:\\Migration_Project\\Migration_Project\\Services\\CustomerService.cs",
+              "RelativeDocumentMoniker": "Services\\CustomerService.cs",
+              "ToolTip": "D:\\Migration_Project\\Migration_Project\\Services\\CustomerService.cs",
+              "RelativeToolTip": "Services\\CustomerService.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAApwIYAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T08:36:16.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Migration_Project\\Migration_Project\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Migration_Project\\Migration_Project\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACQAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T08:35:42.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CustomerDbContext.cs",
+              "DocumentMoniker": "D:\\Migration_Project\\Migration_Project\\Data\\CustomerDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\CustomerDbContext.cs",
+              "ToolTip": "D:\\Migration_Project\\Migration_Project\\Data\\CustomerDbContext.cs",
+              "RelativeToolTip": "Data\\CustomerDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T07:46:40.18Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 386,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

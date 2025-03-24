@@ -1,0 +1,57 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# C# and .NET Core Style Guidelines
+
+## Naming Conventions
+- Use PascalCase for class names, interfaces, public members, and method names
+- Use camelCase for local variables and private fields
+- Prefix interfaces with "I" (e.g., ICustomerService)
+- Prefix private fields with "_" (e.g., _customerRepository)
+- Use meaningful, descriptive names that convey intent
+
+## Code Organization
+- One class per file (except for small related classes)
+- Organize code in the following order:
+  1. Private fields
+  2. Constructors
+  3. Properties
+  4. Public methods
+  5. Private methods
+- Group related members together
+- Keep methods focused on a single responsibility
+
+## API Design
+- Use async/await consistently for asynchronous operations
+- Return Task<T> for async methods, not void
+- Use IEnumerable<T> for read-only collections
+- Use ICollection<T> or List<T> for modifiable collections
+- Follow RESTful conventions for API endpoints
+
+## Error Handling
+- Use exceptions for exceptional conditions only
+- Prefer specific exceptions over generic ones
+- Validate parameters at the beginning of methods
+- Use null-conditional and null-coalescing operators when appropriate
+- Implement global exception handling middleware
+
+## Entity Framework Core
+- Use the repository pattern for data access
+- Define entity configurations in separate classes
+- Use migrations for schema changes
+- Avoid lazy loading in production code
+- Use eager loading with Include() when retrieving related data
+
+## Dependency Injection
+- Follow the SOLID principles
+- Register services with appropriate lifetimes (Singleton, Scoped, Transient)
+- Use constructor injection over property injection
+- Prefer interface-based dependencies
+
+## Testing
+- Write unit tests for business logic
+- Use integration tests for database and API operations
+- Follow Arrange-Act-Assert pattern in test methods
+- Use mock objects for external dependencies
