@@ -67,10 +67,8 @@ export class CustomerFormComponent implements OnInit{
   
   onSubmit(): void {
     if (this.customerForm.valid) {
-      this.submitted = true;
-      
-      console.log('Submitting customer with image:', this.customer.customerImageBase64 ? 'Image data present' : 'No image');
-      
+      this.submitted = true;    
+      console.log('Submitting customer with image:', this.customer.customerImageBase64 ? 'Image data present' : 'No image');     
       if (this.customerId) {
         // Update existing customer
         this.customerService.updateCustomer(this.customerId, this.customer).subscribe({
