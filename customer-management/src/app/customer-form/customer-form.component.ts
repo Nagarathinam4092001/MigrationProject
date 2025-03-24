@@ -46,9 +46,7 @@ export class CustomerFormComponent implements OnInit{
         this.customer = customer;
       },
       error: (error) => {
-        console.error('Error loading customer:', error);
-        
-        
+        console.error('Error loading customer:', error); 
         this.toastr.error('Failed to load customer details.', 'Error');
       }
     });
