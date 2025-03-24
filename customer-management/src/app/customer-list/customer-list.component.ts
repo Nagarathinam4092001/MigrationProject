@@ -17,12 +17,12 @@ export class CustomerListComponent implements OnInit {
   customers: Customer[] = [];
   editingCustomer: Customer | null = null;
   originalCustomer: Customer | null = null;
-  formattedCreditLimit: string = '';
+  formattedCreditLimit = '';
   selectedFile: File | null = null;
   
   // Image lazy loading properties
-  loadedImages: {[id: number]: string} = {};
-  isLoadingImage: {[id: number]: boolean} = {};
+  loadedImages: Record<number, string> = {};
+  isLoadingImage: Record<number, boolean> = {};
 
   constructor(
     private customerService: CustomerService,
