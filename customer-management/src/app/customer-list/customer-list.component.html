@@ -1,0 +1,117 @@
+<div class="customer-list-wrapper">
+  <div class="customer-list">
+    <h2 class="list-header">Customer List</h2>
+    <div *ngIf="customers.length > 0; else noData" class="data-grid-container">
+      <div class="data-grid">
+        <div class="data-grid-header">
+          <div class="grid-cell image-cell">Image</div>
+          <div class="grid-cell">Company Name</div>
+          <div class="grid-cell">Address</div>
+          <div class="grid-cell">City</div>
+          <div class="grid-cell">State</div>
+          <div class="grid-cell">Intro Date</div>
+          <div class="grid-cell">Credit Limit</div>
+          <div class="grid-cell">Actions</div>
+        </div>
+        
+        <div *ngFor="let customer of customers" class="data-grid-row">
+          <!-- If in edit mode and this is the row being edited -->
+          <ng-container *ngIf="editingCustomer && editingCustomer.customerID === customer.customerID; else displayRow">
+            <div class="grid-cell image-cell">
+              <div class="image-container">
+                <img *ngIf="editingCustomer.customerImageBase64" 
+                     [src]="'data:image/jpeg;base64,' + editingCustomer.customerImageBase64" 
+                     alt="Company Logo" 
+                     class="customer-image">
+                <img *ngIf="!editingCustomer.customerImageBase64" 
+                     src="assets/placeholder-image.png" 
+                     alt="No Image" 
+                     class="customer-image">
+                <input type="file" 
+                       #imageInput
+                       style="display: none"
+                       accept="image/*"
+                       (change)="onFileSelected($event)">
+                <button class="btn-browse" (click)="imageInput.click()">Change</button>
+              </div>
+            </div>
+            <div class="grid-cell">
+              <input [(ngModel)]="editingCustomer.companyName" class="edit-input" />
+            </div>
+            <div class="grid-cell">
+              <input [(ngModel)]="editingCustomer.address" class="edit-input" />
+            </div>
+            <div class="grid-cell">
+              <input [(ngModel)]="editingCustomer.city" class="edit-input" />
+            </div>
+            <div class="grid-cell">
+              <input [(ngModel)]="editingCustomer.state" class="edit-input" />
+            </div>
+            <div class="grid-cell">
+              <input type="date" 
+                     [ngModel]="editingCustomer.introDate | date:'yyyy-MM-dd'" 
+                     (ngModelChange)="editingCustomer.introDate = $event"
+                     class="edit-input" />
+            </div>
+            <div class="grid-cell">
+              <input type="text" 
+                     [(ngModel)]="formattedCreditLimit" 
+                     placeholder="0.00"
+                     class="edit-input" />
+            </div>
+            <div class="grid-cell actions">
+              <div class="action-buttons">
+                <button (click)="updateCustomer()" class="btn-update">Update</button>
+                <button (click)="cancelEdit()" class="btn-cancel">Cancel</button>
+              </div>
+            </div>
+          </ng-container>
+          
+          <!-- Display mode -->
+          <ng-template #displayRow>
+            <div class="grid-cell image-cell">
+              <!-- Use lazy loading for images -->
+              <div class="image-container">
+                <ng-container *ngIf="loadedImages[customer.customerID]; else placeholderImage">
+                  <img *ngIf="loadedImages[customer.customerID]"
+                      [src]="'data:image/jpeg;base64,' + loadedImages[customer.customerID]" 
+                      alt="Company Logo" 
+                      class="customer-image">
+                </ng-container>
+                <ng-template #placeholderImage>
+                  <img src="assets/placeholder-image.png" 
+                      alt="No Image" 
+                      class="customer-image">
+                  <button *ngIf="!isLoadingImage[customer.customerID]" 
+                          (click)="loadCustomerImage(customer.customerID)" 
+                          class="btn-browse btn-sm">
+                    Load
+                  </button>
+                  <span *ngIf="isLoadingImage[customer.customerID]" class="loading-indicator">
+                    Loading...
+                  </span>
+                </ng-template>
+              </div>
+            </div>
+            <div class="grid-cell">{{ customer.companyName }}</div>
+            <div class="grid-cell">{{ customer.address }}</div>
+            <div class="grid-cell">{{ customer.city }}</div>
+            <div class="grid-cell">{{ customer.state }}</div>
+            <div class="grid-cell">{{ customer.introDate | date:'yyyy-MM-dd' }}</div>
+            <div class="grid-cell">{{ customer.creditLimit | number:'1.2-2' }}</div>
+            <div class="grid-cell actions">
+              <div class="action-buttons">
+                <button (click)="startEdit(customer)" class="btn-edit">Edit</button>
+                <button (click)="deleteCustomer(customer.customerID)" class="btn-delete">Delete</button>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    
+    <ng-template #noData>
+      <p>No customers found.</p>
+    </ng-template>
+  </div>
+</div>

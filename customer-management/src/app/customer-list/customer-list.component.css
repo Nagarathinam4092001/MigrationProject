@@ -1,0 +1,193 @@
+.list-header {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+/* Data Grid Styles */
+.data-grid-container {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.data-grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.data-grid-header {
+  display: flex;
+  background-color: #f9f9f9;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+}
+
+.data-grid-row {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+.data-grid-row:last-child {
+  border-bottom: none;
+}
+
+.data-grid-row:hover {
+  background-color: #f1f1f1;
+}
+
+.grid-cell {
+  padding: 12px 15px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 100px; /* Ensure minimum width */
+}
+
+/* Actions column styles */
+.grid-cell.actions {
+  flex: 0.5;
+  min-width: 150px;
+  justify-content: center;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Editing styles */
+.edit-input {
+  width: 90%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-edit {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #0056b3;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+.btn-update {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-update:hover {
+  background-color: #218838;
+}
+
+.btn-cancel {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-cancel:hover {
+  background-color: #5a6268;
+}
+
+/* Image cell styles */
+.image-cell {
+  flex: 0.8;
+  min-width: 100px;
+  justify-content: center;
+}
+
+.customer-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-browse {
+  background-color: #6c757d;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  width: 80%;
+}
+
+.btn-browse:hover {
+  background-color: #5a6268;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .data-grid {
+    font-size: 14px;
+  }
+  
+  .grid-cell {
+    padding: 8px 10px;
+  }
+  
+  button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .data-grid-container {
+    overflow-x: scroll;
+  }
+}
+
+.btn-sm {
+  padding: 3px 6px;
+  font-size: 10px;
+}
+
+.loading-indicator {
+  font-size: 10px;
+  color: #666;
+  margin-top: 3px;
+}

@@ -1,0 +1,118 @@
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.form-header {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-container {
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.btn-update {
+  background-color: #28a745 !important; /* Green color for update */
+}
+
+.btn-submit:hover {
+  background-color: #0056b3;
+}
+
+.btn-update:hover {
+  background-color: #218838 !important;
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+}
+
+.error-summary {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.image-upload-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.file-input {
+  display: none;
+}
+
+.btn-browse {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.file-name {
+  color: #555;
+  font-size: 0.9em;
+}
+
+.preview-image {
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 15px;
+  border: 1px solid #ddd;
+  padding: 3px;
+}
+
+.current-image {
+  margin-right: 15px;
+}

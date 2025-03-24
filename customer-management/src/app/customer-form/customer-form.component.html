@@ -1,0 +1,85 @@
+<div class="form-wrapper">
+  <h2 class="form-header">Customer Information</h2>
+  <form (ngSubmit)="onSubmit()" #customerForm="ngForm" class="form-container">
+    <div *ngIf="submitted && customerForm.invalid && customerForm.invalid" class="error-summary">
+      <p>Please fill out all required fields:</p>
+      <ul>
+        <li *ngIf="companyName.invalid">Company Name is required.</li>
+        <li *ngIf="address.invalid">Address is required.</li>
+        <li *ngIf="city.invalid">City is required.</li>
+        <li *ngIf="state.invalid">State is required.</li>
+        <li *ngIf="introDate.invalid">Intro Date is required.</li>
+        <li *ngIf="creditLimit.invalid || customer.creditLimit === 0">Credit Limit must be greater than zero.</li>
+      </ul>
+    </div>
+
+    <div class="form-group">
+      <label for="companyName">Company Name:</label>
+      <input type="text" id="companyName" [(ngModel)]="customer.companyName" name="companyName" required #companyName="ngModel" class="form-control">
+      <div *ngIf="companyName.invalid && companyName.touched" class="error">
+        Company Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <input type="text" id="address" [(ngModel)]="customer.address" name="address" required #address="ngModel" class="form-control">
+      <div *ngIf="address.invalid && address.touched " class="error">
+        Address is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="city">City:</label>
+      <input type="text" id="city" [(ngModel)]="customer.city" name="city" required #city="ngModel" class="form-control">
+      <div *ngIf="city.invalid && city.touched " class="error">
+        City is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="state">State:</label>
+      <input type="text" id="state" [(ngModel)]="customer.state" name="state" required #state="ngModel" class="form-control">
+      <div *ngIf="state.invalid && state.touched " class="error">
+        State is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="introDate">Intro Date:</label>
+      <input type="date" 
+             id="introDate" 
+             [ngModel]="customerId ? (customer.introDate | date:'yyyy-MM-dd') : customer.introDate"
+             (ngModelChange)="customer.introDate = $event"
+             name="introDate" 
+             required 
+             #introDate="ngModel" 
+             class="form-control">
+      <div *ngIf="introDate.invalid && introDate.touched" class="error">
+        Intro Date is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="creditLimit">Credit Limit:</label>
+      <input type="text" 
+             id="creditLimit" 
+             [(ngModel)]="customer.creditLimit" 
+             name="creditLimit" 
+             required 
+             #creditLimit="ngModel" 
+             class="form-control">
+      <div *ngIf="(creditLimit.invalid || customer.creditLimit === 0) && (creditLimit.touched)" class="error">
+        Credit Limit must be greater than zero.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="customerImage">Company Logo:</label>
+      <div class="image-upload-container">
+        <div class="current-image" *ngIf="customer.customerImageBase64">
+          <img [src]="'data:image/jpeg;base64,' + customer.customerImageBase64" alt="Company Logo" class="preview-image">
+        </div>
+        <input type="file" id="customerImage" (change)="onFileSelected($event)" accept="image/*" class="file-input">
+        <button type="button" class="btn-browse" (click)="triggerFileInput()">Browse...</button>
+        <span class="file-name">{{ selectedFileName || 'No file selected' }}</span>
+      </div>
+    </div>
+    <button type="submit" class="btn-submit" [ngClass]="{'btn-update': customerId}"  [disabled]="customerForm.invalid">{{ customerId ? 'Update' : 'Save' }}</button>
+  </form>
+  <app-customer-list></app-customer-list>
+</div>
