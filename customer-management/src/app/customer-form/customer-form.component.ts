@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, ViewChild } from '@angular/core';
+import { Component, inject, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { CustomerService } from '../customer.service';
 import { Customer } from '../Models/customer.model';
 import { FormsModule, NgForm } from '@angular/forms';
@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./customer-form.component.css'],
   imports: [FormsModule, CommonModule, CustomerListComponent]
 })
-export class CustomerFormComponent implements OnInit{
+export class CustomerFormComponent implements OnInit, OnDestroy{
   @ViewChild('customerForm') customerForm!: NgForm;
   customerId: number | null = null;
   customers: Customer[] = [];
@@ -22,7 +22,7 @@ export class CustomerFormComponent implements OnInit{
   submitted = false;
   private routeSub: Subscription = new Subscription();
   selectedFile: File | null = null;
-  selectedFileName: string = '';
+  selectedFileName = '';
   
   constructor(private customerService: CustomerService,
     private toastr: ToastrService,
@@ -67,10 +67,8 @@ export class CustomerFormComponent implements OnInit{
   
   onSubmit(): void {
     if (this.customerForm.valid) {
-      this.submitted = true;
-      
-      console.log('Submitting customer with image:', this.customer.customerImageBase64 ? 'Image data present' : 'No image');
-      
+      this.submitted = true;    
+      console.error('Submitting customer with image:', this.customer.customerImageBase64 ? 'Image data present' : 'No image');     
       if (this.customerId) {
         // Update existing customer
         this.customerService.updateCustomer(this.customerId, this.customer).subscribe({
@@ -106,23 +104,26 @@ export class CustomerFormComponent implements OnInit{
     }
   }
 
-  uploadImageIfNeeded(customerId: number) {
+  uploadImageIfNeeded(customerId: number): void {
     if (this.selectedFile && !this.customer.customerImageBase64) {
       // We need to read the file again since this is a separate request
       const reader = new FileReader();
-      reader.onload = (e: any) => {
-        const base64Image = e.target.result.split(',')[1];
-        this.customerService.uploadCustomerImage(customerId, base64Image).subscribe({
-          next: (response) => {
-            if (response.status === 200) {
-              this.toastr.success('Image uploaded successfully!');
+      reader.onload = (e: ProgressEvent<FileReader>): void => {
+        const result = (e.target as FileReader).result;
+        if (typeof result === 'string') {
+          const base64Image = result.split(',')[1];
+          this.customerService.uploadCustomerImage(customerId, base64Image).subscribe({
+            next: (response) => {
+              if (response.status === 200) {
+                this.toastr.success('Image uploaded successfully!');
+              }
+            },
+            error: (error) => {
+              console.error('Error uploading image:', error);
+              this.toastr.error('Failed to upload image.');
             }
-          },
-          error: (error) => {
-            console.error('Error uploading image:', error);
-            this.toastr.error('Failed to upload image.');
-          }
-        });
+          });
+        }
       };
       reader.readAsDataURL(this.selectedFile);
     }

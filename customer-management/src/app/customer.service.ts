@@ -10,7 +10,7 @@ export class CustomerService {
   private apiUrl = 'https://localhost:7000/api/customer'; // Update with your API URL
   private customersUpdated = new Subject<Customer[]>();
   private cachedCustomers: Customer[] | null = null;
-  private lastFetch: number = 0;
+  private lastFetch = 0;
   private cacheDuration = 30000; // 30 seconds cache
 
   constructor(private http: HttpClient) {}
